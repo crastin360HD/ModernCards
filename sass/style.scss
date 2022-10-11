@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+/* Styling global */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #0B0035;
+
+}
+
+// Variables
+
+$colorPrincipal: #ffff;
+$colorAzul: #0054B7;
+$colorAmarillo: #FF9900;
+$colorBorde: #4D7DC3;
+
+// *Dark mode
+
+
+$colorNegro:rgb(31, 31, 31);
+$colorBackground: #2c3e50;
+$colorGris:#474954;
+$colorBordeDark: #34495e;
+$colorLetras: #ffff;
+
+
+// header
+
+.containerPosts {
+    transform: translateY(-50%);
+    opacity: 0;
+    transition:  opacity .3s 6s;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0B0035;
+    body.activeDark & {
+        background: $colorNegro;
+    }
+
+    .container__header {
+        width: 95%;
+        height: 95%;
+        background: $colorPrincipal;
+        border-top: solid 10px $colorBorde;
+        border-radius: 8px;
+        // Dark mode
+        body.activeDark & {
+            background: $colorGris;
+            border-color: $colorBordeDark;
+        }
+
+        .container__items {
+            width: 90%;
+            height: 100px;
+            margin: auto;
+
+            section {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                
+                .sectionTwo {
+                    // Dark mode
+
+                    body.activeDark & {
+                        color: $colorLetras;
+                    }
+                    h1 {
+                        text-transform: capitalize;
+                        span {
+                            color: $colorAmarillo;
+                        }
+                    }
+                    .titleH1 {
+                        display: block;
+                        border-right: solid 3px;
+                        width: 40ch;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        animation: typing 7s infinite, blink infinite .3s alternate step-end;
+
+                        @keyframes typing {
+                            from {
+                                width: 0;
+                            }
+                        }
+
+                        @keyframes blink {
+                            50% {
+                                border: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .barra {
+        width: 90%;
+        height: 4px;
+        background: #f2f2f2;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .hideSpan {
+        display: none;
+    }
+}
+
+// ContainerCards
+
+.containerCards {
+    width: 90%;
+    height: 450px;
+    margin: auto;
+    position: relative;
+    background-image: url(../img/imgbanner.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: width ease .5s;
+    border-radius: 8px;
+    overflow: hidden;
+
+    .container__cards {
+        width: 100%;
+        height: 100%;
+        .container__title{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            flex-direction: column;
+
+            h2 {
+                font-size: 2em;
+                text-transform: capitalize;
+                color: $colorPrincipal;
+                z-index: 10;
+            }
+            img {
+                width: 40px;
+                z-index: 10;
+                cursor: pointer;
+            }
+            }
+        }
+    }
+
+#iconScroll {
+    animation: topScroll 2s infinite ease-out;
+    margin-top: 25px;
+}
+
+@keyframes topScroll {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    50% {
+        transform: translateY(20%);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+/* Befores */
+
+.loading {
+    // transform: translateX(100%);
+    opacity: 0;
+    transition: all .5s ease-in 6s;
+}
+
+
+.loading::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 100%;
+    top: 0;
+    left: 0px;
+    background: $colorBorde;
+    animation: cardLoading 5s ease;
+} 
+
+@keyframes cardLoading {
+
+    from {
+        width:0%;
+        background-color: #FF9900;
+    }
+
+    to {
+        width: 100%;
+    }
+
+}
+
+
+.containerCards:before{
+    content: '';
+    width: 100%;
+    height:100%;
+    background:rgba(0, 0, 0, 0.66);
+    position:absolute;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    background: $colorAzul;
+    padding: 8px;
+    border-radius: 50%;
+    margin: 0 15px;
+}
+
+// ContainerPost
+
+.containerPosts {
+    width: 100%;
+    height: 100%;
+
+    .container__post__new {
+        display: flex;
+        width: 100%;
+        height: 500px;
+        align-items: center;
+        justify-content: center;
+
+        .container__cards {
+            transform: scale(1);
+            transition: transform ease-in .2s;
+            width: 320px;
+            height: 460px;
+            margin: 10px 20px;
+            background: $colorPrincipal;
+            border-radius: 8px;
+            border-bottom: 10px solid $colorBorde;
+            body.activeDark &{
+                background: $colorBackground;
+                color: $colorLetras;
+                border-color: $colorBordeDark;
+            }
+            // !No Quitar
+            overflow: hidden;
+            box-shadow: $colorAzul 0 0 20px -10px;
+            img{
+                width: 100%;
+                // height: 50%;
+                object-fit: cover;
+            }
+            &.two {
+                scale: 1.1;
+            }
+            .container__content {
+                margin-top: 10px;
+                padding: 12px 12px;
+                a {
+                    text-decoration: none;
+                    color: $colorAmarillo;
+                    h3 {
+                        font-size: 1.3em;
+                        margin-bottom: 10px;
+                        text-transform: capitalize;
+                        text-align: left;
+                }
+                }
+                p {
+                    font-size: 0.9em;
+                    text-align: justify;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+// Dartk mode settins
+
+.dark {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    bottom: 40px;
+    right: 50px;
+    background: $colorPrincipal;
+    box-shadow: 0 0 10px -5px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.mixinDark {
+    bottom: 40px;
+    right: 50px;
+    border-radius: 50%;
+    width: 40px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+.modeSun {
+    transform: translateY(-4px);
+    box-shadow: none;
+    background-color: $colorAmarillo;
+}
+
+.activeSun {
+    transform: translateY(-45px);
+}
+
+@import '_media.scss'

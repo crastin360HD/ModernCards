@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sass Proyect Practice</title>
+    <!-- Main sass -->
+    <link rel="stylesheet" href="./sass/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container__header">
+            
+            <div class="container__items">
+                <section>
+                    <div class="sectionOne">
+                        <img class="logo" src="./svg/bx-laptop.svg" alt="">
+                    </div>
+                    <div class="sectionTwo">
+                        <h1 class="titleH1">
+                            discover the new <span>purchases</span> that await you
+                        </h1>
+                        <h1 class="hideSpan">discover the new <span>purchases</span> that await you</h1>
+                    </div>
+                </section>
+            </div>
+            <div class="barra"></div>
+            <!-- containerCards -->
+    
+            <div id="containerCards" class="containerCards">
+                <div class="container__cards">
+                    <div class="container__title">
+                        <h2>
+                            We have new thing for you..
+                        </h2>
+                        <img id="iconScroll" src="./svg/bxs-down-arrow-circle.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="containerPosts" id="containerPosts">
+                <main>
+                    <div class="container__post__new">
+                        <div class="container__cards one">
+                            <img src="./img/imgcart1.jpg" alt="">
+                            <div class="container__content">
+                                <a href="#"><h3>get inspired</h3></a>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati numquam exercitationem aperiam eligendi vero id, autem dignissimos ipsum pariatur nam fuga, maiores iure! Ipsum id suscipit doloribus assumenda excepturi veritatis.</p>
+                            </div>
+                        </div>
+    
+                        <div class="container__cards two">
+                            <img src="./img/imgcart2.jpg" alt="">
+                            <div class="container__content">
+                                <a href="#"><h3>do you need a job?</h3></a>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati numquam exercitationem aperiam eligendi vero id, autem dignissimos ipsum pariatur nam fuga, maiores iure! Ipsum id suscipit doloribus assumenda excepturi veritatis.</p>
+                            </div>
+                        </div>
+    
+                        <div class="container__cards three">
+                            <img src="./img/imgcart3.jpg" alt="">
+                            <div class="container__content">
+                                <a href="#"><h3>work from home</h3></a>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati numquam exercitationem aperiam eligendi vero id, autem dignissimos ipsum pariatur nam fuga, maiores iure! Ipsum id suscipit doloribus assumenda excepturi veritatis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <!-- Dark Mode -->
+        <div class="dark">
+            <img class="modeMoon mixinDark" src="./svg/bxs-moon.svg" alt="">
+            <img class="modeSun mixinDark" src="./svg/bxs-sun.svg" alt="">
+        </div>
+    </div>
+
+    <!-- Script -->
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
